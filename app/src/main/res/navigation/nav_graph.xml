@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/exercisesFragment">
+
+    <fragment
+        android:id="@+id/exercisesFragment"
+        android:name="com.omelchenkoaleks.fitness.screens.ExercisesFragment"
+        android:label="fragment_exercises"
+        tools:layout="@layout/fragment_exercises" >
+        <action
+            android:id="@+id/action_exercisesFragment_to_listExercisesFragment"
+            app:destination="@id/listExercisesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listExercisesFragment"
+        android:name="com.omelchenkoaleks.fitness.screens.ListExercisesFragment"
+        android:label="fragment_list_exercises"
+        tools:layout="@layout/fragment_list_exercises" />
+</navigation>
