@@ -34,8 +34,6 @@ class RecyclerViewAdapter(exerciseList: List<Exercise>) :
         holder.setItemClickListener(object : ItemClickListener {
             override fun onClick(view: View, position: Int) {
 
-                showToast("Click ${list[position]}")
-
                 val bundle = bundleOf("image_id" to list[position].image_id, "name" to list[position].name)
                 APP_ACTIVITY.navController.navigate(R.id.action_listExercisesFragment_to_viewExerciseFragment, bundle)
             }

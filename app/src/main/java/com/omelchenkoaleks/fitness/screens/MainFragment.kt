@@ -6,19 +6,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.omelchenkoaleks.fitness.R
-import com.omelchenkoaleks.fitness.databinding.FragmentExercisesBinding
+import com.omelchenkoaleks.fitness.databinding.FragmentMainBinding
 import com.omelchenkoaleks.fitness.utils.APP_ACTIVITY
 
-class ExercisesFragment : Fragment() {
+class MainFragment : Fragment() {
 
-    private var _binding: FragmentExercisesBinding? = null
+    private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentExercisesBinding.inflate(inflater, container, false)
+    ): View {
+        _binding = FragmentMainBinding.inflate(inflater, container, false)
         return binding.root
     }
 
