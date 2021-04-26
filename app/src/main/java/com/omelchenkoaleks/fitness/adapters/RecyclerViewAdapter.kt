@@ -3,11 +3,13 @@ package com.omelchenkoaleks.fitness.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.RecyclerView
 import com.omelchenkoaleks.fitness.R
 import com.omelchenkoaleks.fitness.holders.RecyclerViewHolder
 import com.omelchenkoaleks.fitness.interfaces.ItemClickListener
 import com.omelchenkoaleks.fitness.models.Exercise
+import com.omelchenkoaleks.fitness.utils.APP_ACTIVITY
 import com.omelchenkoaleks.fitness.utils.showToast
 
 class RecyclerViewAdapter(exerciseList: List<Exercise>) :
@@ -31,7 +33,11 @@ class RecyclerViewAdapter(exerciseList: List<Exercise>) :
 
         holder.setItemClickListener(object : ItemClickListener {
             override fun onClick(view: View, position: Int) {
+
                 showToast("Click ${list[position]}")
+
+                val bundle = bundleOf("image_id" to list[position].image_id, "name" to list[position].name)
+                APP_ACTIVITY.navController.navigate(R.id.action_listExercisesFragment_to_viewExerciseFragment, bundle)
             }
         })
     }

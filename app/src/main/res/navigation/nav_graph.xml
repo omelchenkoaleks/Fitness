@@ -18,5 +18,23 @@
         android:id="@+id/listExercisesFragment"
         android:name="com.omelchenkoaleks.fitness.screens.ListExercisesFragment"
         android:label="fragment_list_exercises"
-        tools:layout="@layout/fragment_list_exercises" />
+        tools:layout="@layout/fragment_list_exercises" >
+        <action
+            android:id="@+id/action_listExercisesFragment_to_viewExerciseFragment"
+            app:destination="@id/viewExerciseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewExerciseFragment"
+        android:name="com.omelchenkoaleks.fitness.screens.ViewExerciseFragment"
+        android:label="fragment_view_exercise"
+        tools:layout="@layout/fragment_view_exercise" >
+        <argument
+            android:name="image_id"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue="empty" />
+    </fragment>
 </navigation>
