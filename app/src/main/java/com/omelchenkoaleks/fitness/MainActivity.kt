@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import com.omelchenkoaleks.fitness.notifications.NotificationUtils
 import com.omelchenkoaleks.fitness.utils.APP_ACTIVITY
+import com.omelchenkoaleks.fitness.utils.AppPreference
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,5 +18,7 @@ class MainActivity : AppCompatActivity() {
         APP_ACTIVITY = this
 
         navController = Navigation.findNavController(this, R.id.nav_host_fragments)
+        AppPreference.getPreference(this)
+        NotificationUtils(this)
     }
 }

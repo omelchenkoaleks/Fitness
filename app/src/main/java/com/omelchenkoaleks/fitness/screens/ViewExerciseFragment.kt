@@ -9,8 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.omelchenkoaleks.fitness.R
 import com.omelchenkoaleks.fitness.databinding.FragmentViewExerciseBinding
-import com.omelchenkoaleks.fitness.utils.APP_ACTIVITY
-import com.omelchenkoaleks.fitness.utils.showToast
+import com.omelchenkoaleks.fitness.utils.*
 import kotlinx.android.synthetic.main.fragment_view_exercise.*
 
 class ViewExerciseFragment : Fragment() {
@@ -45,7 +44,20 @@ class ViewExerciseFragment : Fragment() {
             if (!isRunning) {
                 binding.btnStart.text = "DONE"
 
-                object : CountDownTimer(20000, 1000) {
+                var timeLimit = 0L
+                when {
+                    AppPreference.getMode() == 0 -> {
+                        timeLimit = TIME_LIMIT_EASY
+                    }
+                    AppPreference.getMode() == 1 -> {
+                        timeLimit = TIME_LIMIT_MEDIUM
+                    }
+                    AppPreference.getMode() == 2 -> {
+                        timeLimit = TIME_LIMIT_HARD
+                    }
+                }
+
+                object : CountDownTimer(timeLimit, 1000) {
                     override fun onTick(millisUntilFinished: Long) {
                         binding.timer.text = ((millisUntilFinished + 1) / 1000).toString()
                     }

@@ -3,16 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/exercisesFragment">
+    app:startDestination="@id/mainFragment">
 
     <fragment
-        android:id="@+id/exercisesFragment"
+        android:id="@+id/mainFragment"
         android:name="com.omelchenkoaleks.fitness.screens.MainFragment"
         android:label="fragment_exercises"
         tools:layout="@layout/fragment_main" >
         <action
-            android:id="@+id/action_exercisesFragment_to_listExercisesFragment"
+            android:id="@+id/action_mainFragment_to_listExercisesFragment"
             app:destination="@id/listExercisesFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/listExercisesFragment"
@@ -39,5 +42,14 @@
         <action
             android:id="@+id/action_viewExerciseFragment_to_listExercisesFragment"
             app:destination="@id/listExercisesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.omelchenkoaleks.fitness.screens.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
 </navigation>

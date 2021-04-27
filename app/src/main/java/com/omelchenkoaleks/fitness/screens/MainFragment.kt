@@ -26,7 +26,11 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnExercises.setOnClickListener {
-            APP_ACTIVITY.navController.navigate(R.id.action_exercisesFragment_to_listExercisesFragment)
+            APP_ACTIVITY.navController.navigate(R.id.action_mainFragment_to_listExercisesFragment)
+        }
+
+        binding.btnSettings.setOnClickListener {
+            APP_ACTIVITY.navController.navigate(R.id.action_mainFragment_to_settingsFragment)
         }
     }
 
