@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_mainFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_dailyTrainingFragment"
+            app:destination="@id/dailyTrainingFragment" />
     </fragment>
     <fragment
         android:id="@+id/listExercisesFragment"
@@ -52,4 +55,9 @@
             android:id="@+id/action_settingsFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/dailyTrainingFragment"
+        android:name="com.omelchenkoaleks.fitness.screens.DailyTrainingFragment"
+        android:label="fragment_daily_training"
+        tools:layout="@layout/fragment_daily_training" />
 </navigation>
